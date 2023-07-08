@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import '../pages/home_page.dart';
+import 'package:zoeyapp/app.dart';
+import 'package:zoeyapp/home.dart';
 // import 'package:stem_wiz/src/authentication/phone_number_auth.dart';
 // import 'package:stem_wiz/src/home_page/home_page.dart';
 
@@ -120,7 +121,7 @@ class LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(14),
                         )),
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            const Color(0xFFEF9CAF)),
+                            const Color(0xFFff6666)),
                         fixedSize: MaterialStateProperty.all<Size>(Size(
                             MediaQuery.of(context).size.width * 0.8,
                             MediaQuery.of(context).size.width * 0.12))),
