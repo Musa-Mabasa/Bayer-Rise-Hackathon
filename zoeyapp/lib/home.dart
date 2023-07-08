@@ -19,8 +19,8 @@ class HomeState extends State<Home> {
       backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
-          appbarWidget(MediaQuery.of(context).size, context, "Women Hacks"),
-          menubarWidget(MediaQuery.of(context).size, context),
+          // menubarWidget(MediaQuery.of(context).size, context),
+          headerWidget(context),
           searchBar(context),
           const SizedBox(
             height: 20,
@@ -75,7 +75,7 @@ class Admin extends StatelessWidget {
                     height: 14,
                   ),
                   Text(
-                    "Info Centere",
+                    "Info Center",
                     style: GoogleFonts.openSans(
                         textStyle: const TextStyle(
                             color: Colors.white,
@@ -282,6 +282,27 @@ Widget appbarWidget(Size size, BuildContext context, String groupName) {
           groupName,
           style: const TextStyle(fontSize: 25, color: Colors.white),
         ),
+      ],
+    ),
+  );
+}
+
+Widget headerWidget(BuildContext context) {
+  return Container(
+    height: MediaQuery.of(context).size.height * 0.1,
+    child: Row(
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Hello!'),
+            const Text(
+              'Naledi Moropeng',
+              style: TextStyle(),
+            )
+          ],
+        )
       ],
     ),
   );
