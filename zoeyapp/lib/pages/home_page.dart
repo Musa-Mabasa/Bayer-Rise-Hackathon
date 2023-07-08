@@ -11,14 +11,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Column(
+        title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Hi, Jane"),
-            Text(
-              "How are you feeling today?",
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            Text("Hi, Zoey!"),
           ],
         ),
         actions: [

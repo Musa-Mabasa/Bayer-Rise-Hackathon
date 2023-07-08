@@ -2,19 +2,21 @@
 import 'package:flutter/material.dart';
 import 'package:zoeyapp/pages/period.dart';
 
+import '../home.dart';
+
 class HealthNeeds extends StatelessWidget {
   const HealthNeeds({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<CustomIcon> customIcons = [
-      CustomIcon(name: "Appointment", icon: 'assets/appointment.png'),
+      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
       CustomIcon(name: "Hospital", icon: 'assets/hospital.png'),
       CustomIcon(name: "Period", icon: 'assets/period.png'),
       CustomIcon(name: "More", icon: 'assets/more.png'),
     ];
     List<CustomIcon> healthNeeds = [
-      CustomIcon(name: "Appointment", icon: 'assets/appointment.png'),
+      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
       CustomIcon(name: "Hospital", icon: 'assets/hospital.png'),
       CustomIcon(name: "Period", icon: 'assets/period.png'),
       CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
@@ -67,7 +69,25 @@ class HealthNeeds extends StatelessWidget {
                                   return Column(
                                     children: [
                                       InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          if (index == 2) {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Period(),
+                                              ),
+                                            );
+                                          }
+                                          if(index == 3) {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => const Home(),
+                                              ),
+                                            );
+                                          }
+                                        },
                                         borderRadius: BorderRadius.circular(90),
                                         child: Container(
                                           width: 60,
