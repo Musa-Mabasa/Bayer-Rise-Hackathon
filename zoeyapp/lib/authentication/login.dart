@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:zoeyapp/app.dart';
 import 'package:zoeyapp/home.dart';
+
+import '../pages/home_page.dart';
 // import 'package:stem_wiz/src/authentication/phone_number_auth.dart';
 // import 'package:stem_wiz/src/home_page/home_page.dart';
 
