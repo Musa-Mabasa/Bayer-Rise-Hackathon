@@ -12,60 +12,70 @@
 </head>
 <body>
     <header >
-        <div class="navImages">
-            <img id="logo" src="../assets/navLogo.jpg" alt="Logo">
-            <img id="pinkLogo" src="../assets/pinkLogo.jpeg" alt="Logo">
-        </div>
         <div class="topnav">
-           
-            <a href="../home.html">About Us |   </a>
-    
-            <a href="competitions.html"> Contact Us  &nbsp; &nbsp; &nbsp;  </a>
-            <a href="../Catalog.html">  Catalog &nbsp; &nbsp; &nbsp; </a>            
-            <a href="../HealthCenter/index.html">Health &nbsp; &nbsp; &nbsp;| </a>
-            <a  href="../infoCenter.html">Info Center &nbsp; &nbsp; &nbsp;| </a>
-            <a  class="active" href="../home.html">Home  &nbsp; &nbsp; &nbsp;| </a>
+            <img  src="../assets/logoo.png" alt="Logo" width="40px" height="40px">
+            <a href="../periodTracking/pills.html"> Remind Me &nbsp; &nbsp; &nbsp;  </a>|
+            <a href="../calendar/calendar.html">Track &nbsp; &nbsp; &nbsp;</a>|
+            <a href="../AskMyPeers/index.html">Community &nbsp; &nbsp; &nbsp; </a>|
+            <a  href="../infoCenter.html">Info Center &nbsp; &nbsp; &nbsp; </a>|
+            <a  class="active" href="../home.html">Home  &nbsp; &nbsp; &nbsp; </a>|
         </div>
     </header>
 
-    <br>
-    <br>
+    <br/>
+    <br/>
+    <br/>
+  
 
     <div id="secondTopSection">
         <p id="PageHeader">Ask My Peers</p>
         <div id="searchBar"><Text>Search... </Text>
         </div>
-       <a href="../MyPost/index.html"  style="color:#D9B4BC;margin-top: -1%; margin-right: 11%;"> <i class="fa-solid fa-circle-plus fa-2x" style="color:#D9B4BC;margin-top: -1%; margin-right: 11%;"  ></i> </a>
+       <a href="../MyPost/index.html"  style="color:#D9B4BC;margin-top: -1%; margin-right: 11%;"> <i class="fa-solid fa-circle-plus fa-2x" style="color:#ff6666;margin-top: -1%; margin-right: 11%;"  ></i> </a>
     </div>
+    <script>
+        function updateTime() {
+          var currentTime = new Date();
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          
+          // Add leading zeros if needed
+          hours = (hours < 10 ? "0" : "") + hours;
+          minutes = (minutes < 10 ? "0" : "") + minutes;
+          seconds = (seconds < 10 ? "0" : "") + seconds;
+          
+          var timeString ="Anonymous - Health related            @" + hours + ":" + minutes ;
+          
+          // Update the content of the element with id 'time'
+          document.getElementById('time').textContent = timeString;
+        }
+        
+        // Update the time every second
+        setInterval(updateTime, 1000);
+      </script>
 
     <div class="postDiv">
         <div class=" split postContent">
             <div>
                 <div class="user">
-                    <p><span class="bold">Me </span> <span class="timeStamp">@ Now</span></p>
+                    <p class="bold" id="time" style="color: #fff;" >Anonymous - Health related </p>
+                        <br>
                 </div>
                 <br>
-                <img src="../assets/new.png" class="postImg">
+            <br>
+                <img src="../assets/img4.jpg" class="postImg">
                 <br>
-                <p class="postText" >hi guys.<span>  </span> 
+                <p class="postText" >Add caption<span>  </span> 
                 </p>
             </div>
         </div>
         <div class=" split1 commentsSection">
-           
-
-            <div style="margin-Top:15%">
-               There are no comments on this post yet.
+            <div class="comment">
+                <p class="bold">No Comments yet</p>
             </div>
-            <br>
-            <br>
-
-            <div>
-                <form action="./posted.html">
-                    <input type="text" id="myComment" name="comment" value="Add Caption">
-                    <input type="submit" id="submit" value="Submit" >
-                </form>
-            </div>
+            <br/>
+         
 
            
         </div>

@@ -81,8 +81,20 @@
             background-color: #ff6666;
         }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- <header > -->
+        <div class="topnav">
+            <img  src="../assets/logoo.png" alt="Logo" width="40px" height="40px">
+            <a href="../periodTracking/pills.html"> Remind Me &nbsp; &nbsp; &nbsp;  </a>|
+            <a href="../calendar/calendar.html">Track &nbsp; &nbsp; &nbsp;</a>|
+            <a href="../AskMyPeers/index.html">Community &nbsp; &nbsp; &nbsp; </a>|
+            <a  href="../infoCenter.html">Info Center &nbsp; &nbsp; &nbsp; </a>|
+            <a  class="active" href="../home.html">Home  &nbsp; &nbsp; &nbsp; </a>|
+        </div>
+    <!-- </header> -->
     <div class="container">
         <div class="form-container">
             <h1>Pill Reminder</h1>
@@ -96,24 +108,17 @@
                 <label for="pill-instructions">Instructions:</label>
                 <textarea id="pill-instructions" rows="4" placeholder="Enter pill instructions"></textarea>
 
-                <button onclick="setReminder()">Set Reminder</button>
+                <button id="setReminderBtn">Set Reminder</button>
             </form>
         </div>
-
-        <div class="image-container"></div>
-    </div>
-
-    <script>
-        function setReminder() {
-            var pillName = document.getElementById("pill-name").value;
-            var pillTime = document.getElementById("pill-time").value;
-            var pillInstructions = document.getElementById("pill-instructions").value;
-
-            // ... reminder logic ...
-
-            // For demonstration purposes, display a console log instead of setting an actual reminder
-            console.log("Reminder set for: " + pillName + " at " + pillTime);
-        }
-    </script>
+        <div id="messageBox" class="message-box">
+            This is a sample message.
+          </div>
+      
+          <div class="image-container"></div>
+        </div>
+      
+        <script src="script.js"></script>
+   
 </body>
 </html>

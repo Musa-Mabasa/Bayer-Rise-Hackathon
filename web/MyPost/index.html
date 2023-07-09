@@ -11,19 +11,13 @@
 </head>
 <body>
     <header >
-        <div class="navImages">
-            <img id="logo" src="../assets/navLogo.jpg" alt="Logo">
-            <img id="pinkLogo" src="../assets/pinkLogo.jpeg" alt="Logo">
-        </div>
         <div class="topnav">
-           
-            <a href="../home.html">About Us |   </a>
-    
-            <a href="competitions.html"> Contact Us  &nbsp; &nbsp; &nbsp;  </a>
-            <a href="../Catalog.html">  Catalog &nbsp; &nbsp; &nbsp; </a>          
-            <a href="../HealthCenter/index.html">Health &nbsp; &nbsp; &nbsp;| </a>
-            <a  href="../infoCenter.html">Info Center &nbsp; &nbsp; &nbsp;| </a>
-            <a  class="active" href="../home.html">Home  &nbsp; &nbsp; &nbsp;| </a>
+            <img  src="../assets/logoo.png" alt="Logo" width="40px" height="40px">
+            <a href="../periodTracking/pills.html"> Remind Me &nbsp; &nbsp; &nbsp;  </a>|
+            <a href="../calendar/calendar.html">Track &nbsp; &nbsp; &nbsp;</a>|
+            <a href="../AskMyPeers/index.html">Community &nbsp; &nbsp; &nbsp; </a>|
+            <a  href="../infoCenter.html">Info Center &nbsp; &nbsp; &nbsp; </a>|
+            <a  class="active" href="../home.html">Home  &nbsp; &nbsp; &nbsp; </a>|
         </div>
     </header>
 
@@ -39,17 +33,32 @@
     <div class="postDiv">
         <div class=" split postContent">
             <div class="user">
-                <p><span class="bold"><img src="../assets/me.jpg" style="width: 50px; height: 50px; border-radius: 60%; margin-right: 2%;"  >Me </span> <span class="timeStamp">  &nbsp; &nbsp;  &nbsp;    &nbsp;   Now</span></p>
+                <p style="color: #fff;"><span class="bold"><img src="../assets/me.jpg" style="  width: 50px; height: 50px; border-radius: 60%; margin-right: 2%;"  >Me </span> <span class="timeStamp" style="color: #fff;">  &nbsp; &nbsp;  &nbsp;    &nbsp;   Now</span></p>
             </div>
-            <form action="./addedInvoiceFrom2.html">
+            <form action="./addedInvoiceFrom2.html" style="color: #fff;">
                 <i  class="instructionIcon fa fa-upload fa-3x"></i><br>
     
                 <input type="file" id="myFile" name="filename">
             </form>
             <br>
         </div>
+        <div class="container">
+            <h1>Switching Names</h1>
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="nameToggle" onchange="toggleName()">
+              <label class="custom-control-label" for="nameToggle">Toggle: </label>
+            </div>
+            <p>Current name: <span id="name">anonymous</span></p>
+          </div>
         <div class=" split1 commentsSection">
-
+            <label for="options" style="font-weight: bold;">What is your post related to?  &nbsp;  &nbsp; </label>
+        <select id="options" onchange="handleSelection()">
+            <option value="option1">Health</option>
+            <option value="option2">Question</option>
+            <option value="option3">Request</option>
+            <option value="option4">Experience</option>
+        </select>
+        <br/><br/
             <div>
                 <form action="./posted.html">
                     <input type="text" id="myComment" name="comment" value="Add Caption">
