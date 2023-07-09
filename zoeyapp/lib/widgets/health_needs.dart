@@ -10,16 +10,16 @@ class HealthNeeds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<CustomIcon> customIcons = [
-      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
+      CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
       CustomIcon(name: "Hospital", icon: 'assets/hospital.png'),
       CustomIcon(name: "Period", icon: 'assets/period.png'),
       CustomIcon(name: "More", icon: 'assets/more.png'),
     ];
     List<CustomIcon> healthNeeds = [
-      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
+      CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
       CustomIcon(name: "Hospital", icon: 'assets/hospital.png'),
       CustomIcon(name: "Period", icon: 'assets/period.png'),
-      CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
+      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
     ];
     List<CustomIcon> specialisedCared = [
       CustomIcon(name: "Diabetes", icon: 'assets/blood.png'),
@@ -35,6 +35,14 @@ class HealthNeeds extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
+                if (index == 0) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Home(),
+                    ),
+                  );
+                }
                 if (index == 2) {
                   Navigator.push(
                     context,
@@ -79,7 +87,7 @@ class HealthNeeds extends StatelessWidget {
                                               ),
                                             );
                                           }
-                                          if(index == 3) {
+                                          if(index == 0) {
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(

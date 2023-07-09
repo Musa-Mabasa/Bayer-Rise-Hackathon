@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zoeyapp/ask.dart';
+import 'package:zoeyapp/pages/dischem.dart';
 import 'health.dart';
 import 'info.dart';
 import 'panic.dart';
@@ -57,7 +58,7 @@ class Pharmacy extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Info()),
+                MaterialPageRoute(builder: (context) => const DisChem()),
               );
             },
             child: Container(
@@ -106,7 +107,7 @@ class Pharmacy extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Panic()),
+                MaterialPageRoute(builder: (context) => const Info()),
               );
             },
             child: Container(
