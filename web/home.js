@@ -1,4 +1,6 @@
-
+function find() {
+    window.location.href = "FindNearest/index.html";
+}
 
 function info() {
     window.location.href = "infoCenter.html";
