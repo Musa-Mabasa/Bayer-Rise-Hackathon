@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:zoeyapp/pages/period.dart';
 
 import '../home.dart';
+import '../info.dart';
 
 class HealthNeeds extends StatelessWidget {
   const HealthNeeds({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class HealthNeeds extends StatelessWidget {
       CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
       CustomIcon(name: "Hospital", icon: 'assets/hospital.png'),
       CustomIcon(name: "Period", icon: 'assets/period.png'),
-      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
+      CustomIcon(name: "Learn", icon: 'assets/learn.png'),
     ];
     List<CustomIcon> specialisedCared = [
       CustomIcon(name: "Diabetes", icon: 'assets/blood.png'),
@@ -84,6 +85,15 @@ class HealthNeeds extends StatelessWidget {
                                               MaterialPageRoute(
                                                 builder: (context) =>
                                                     const Period(),
+                                              ),
+                                            );
+                                          }
+                                          if (index == 3) {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Info(),
                                               ),
                                             );
                                           }
