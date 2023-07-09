@@ -111,11 +111,8 @@ class HealthNeeds extends StatelessWidget {
                                           width: 60,
                                           height: 60,
                                           padding: const EdgeInsets.all(15),
-                                          decoration: BoxDecoration(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .primaryContainer
-                                                .withOpacity(0.4),
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFF001c30),
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
@@ -152,11 +149,8 @@ class HealthNeeds extends StatelessWidget {
                                           width: 60,
                                           height: 60,
                                           padding: const EdgeInsets.all(15),
-                                          decoration: BoxDecoration(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .primaryContainer
-                                                .withOpacity(0.4),
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFF001c30),
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
@@ -183,11 +177,8 @@ class HealthNeeds extends StatelessWidget {
                 width: 60,
                 height: 60,
                 padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .primaryContainer
-                      .withOpacity(0.4),
+                decoration: const BoxDecoration(
+                  color: Color(0xFF001c30),
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
