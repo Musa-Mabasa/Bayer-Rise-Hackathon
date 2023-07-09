@@ -327,7 +327,7 @@ Widget appbarWidget(Size size, BuildContext context, String groupName) {
     padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 6),
     width: size.width,
     height: 100,
-    color: Colors.pink[100],
+    color: Color(0xFF001c30),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

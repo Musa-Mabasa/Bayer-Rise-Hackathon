@@ -13,7 +13,7 @@ class UpcomingCard extends StatelessWidget {
       height: 150,
       padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 20),
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withOpacity(0.8),
+        color: Color(0xFF001c30),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -41,7 +41,7 @@ class UpcomingCard extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               Text(
-                "Dental Specialist",
+                "Gynecologist",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       color: Colors.white70,
                     ),
