@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zoeyapp/landingpage.dart';
 import 'package:zoeyapp/onboardingscreen.dart';
 import 'package:zoeyapp/profwelcome.dart';
 // import 'authentication/login.dart';
@@ -6,5 +7,6 @@ import 'package:zoeyapp/profwelcome.dart';
 // import "home.dart";
 
 void main() {
-  runApp(const MaterialApp(home: ProfWelcome()));
+  runApp(const MaterialApp(
+      debugShowCheckedModeBanner: false, home: LandingPage()));
 }

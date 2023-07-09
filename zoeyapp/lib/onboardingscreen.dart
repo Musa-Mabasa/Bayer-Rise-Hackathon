@@ -19,9 +19,9 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
         child: IntroductionScreen(
       pages: [
         PageViewModel(
-          title: 'Welcome to Zoey',
+          title: 'What is ELLAH?',
           body:
-              'Zoey is a platform that helps with women\'s health and wellness',
+              'Empowering Ladies through Learning Awareness & Health is a platform that helps with women\'s health and wellness',
           image: buildImage('assets/undraw_appreciation_pfq2.svg'),
           decoration: getPageDecoration(),
         ),
