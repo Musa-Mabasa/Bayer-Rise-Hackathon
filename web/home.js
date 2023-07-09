@@ -13,3 +13,6 @@ function health() {
 function ask() {
     window.location.href = "AskMyPeers/index.html";
 }
+function track() {
+    window.location.href = "calendar/calendar.html";
+}
