@@ -1,0 +1,201 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+  }
+  
+  li a {
+    font-weight: bolder;
+    font-size: 30px;
+    display: block;
+    color: #000;
+    padding: 60px 50px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #e6e6e6;
+    color: white;
+  }
+  
+  .container{
+    width: 100%;
+  }
+
+  .top{
+    width: 100%;
+    color: #001C30;
+    text-align: center;
+    font-size: 26pt;
+    font-weight: bolder;
+  }
+
+  @media only screen and (min-width: 768px) {
+    iframe{
+      height: 25em;
+      /* height: 100%; */
+    }
+    .card{
+      width: 75%;
+      height: 250px;
+    }
+  }
+
+  .card{
+    text-align: center;
+  }
+
+  #logo {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+  .navImages {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  #pinkLogo{
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+  }
+  .topnav {
+      overflow: hidden;
+      background-color: #001C30;
+      /* margin-top: 5%; */
+      align-items: center;
+      vertical-align: middle;
+      padding-left: 1%;
+      
+    }
+    
+    .topnav a {
+      float: right;
+      color: #fff;
+      text-align: center;
+      padding: 5px 5px;
+      text-decoration: none;
+      font-size: 15px;
+  
+    }
+    
+    .topnav a:hover {
+      background-color: #002845;
+      color: white;
+    }
+    
+    .topnav a.active {
+      
+      color: #ff6083;
+  
+    }
+  
+    #logo-name
+    {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      
+    }
+  
+    #logoSize{
+      width: 60px;
+      height: 50px;
+      float: left;
+    }
+  
+    #navName{
+      float: left;
+      color: #001C30;
+      text-align: center;
+      text-decoration: none;
+  
+      }
+      
+
+  
+  .cardsColor{
+      background-color: #fff;
+  }
+
+ 
+  .red{
+    background-color: #C8C8C8;
+    width: 100%;
+  }
+.card-img-top{
+    height: 150px;
+}
+  
+.btn{
+    
+    background-color: #ff6666;
+    font-size: larger;
+
+    
+}
+
+.form-container{
+    justify-content: center;
+    text-align: center;
+} 
+  
+.nav2{
+    background-color: #c8c8c8;
+    color: #001C30;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0%;
+    padding-right: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    width: 10px;
+    height: 100%;
+    position: relative;
+    top: -2px;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+}
+
+.sideBar{
+    font-size: 22px !important;
+}
+
+.search-form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.search-input{
+  border-radius: 15px;
+}
+
+.search-form input[type="text"] {
+  padding: 8px;
+  width: 300px;
+}
+
+.row {
+  display: none;
+}
+
+.row.show {
+  display: table-row;
+}
