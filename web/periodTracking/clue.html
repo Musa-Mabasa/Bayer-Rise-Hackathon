@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Period Tracker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <section id="dashboard">
+        <h1>Welcome, Jane!</h1>
+        <div class="cycle-summary">
+            <div class="summary-item">
+                <h3>Next Period</h3>
+                <p id="nextPeriodDate"></p>
+            </div>
+            <div class="summary-item">
+                <h3>Days Left</h3>
+                <p id="daysLeft"></p>
+            </div>
+            <div class="summary-item">
+                <h3>Cycle Length</h3>
+                <p>28 days</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar">
+        <h2>My Cycle Calendar</h2>
+        <!-- <div class="calendar-container">
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day period">3</div>
+        <div class="calendar-day period">4</div>
+        <div class="calendar-day period">5</div>
+        <div class="calendar-day period">6</div>
+        <div class="calendar-day period">7</div>
+        <div class="calendar-day">8</div>
+      
+      </div> -->
+    </section>
+
+    <section id="symptoms">
+        <h2>My Symptoms</h2>
+        <div class="symptoms-container">
+            <div class="symptom">Period Flow: <span id="periodFlow"></span></div>
+            <div class="symptom">Spotting: <span id="spotting"></span></div>
+            <div class="symptom">Feelings:
+                <span id="sad"></span>
+                <span id="happy"></span>
+                <span id="moody"></span>
+                <span id="bloated"></span>
+            </div>
+            <div class="symptom">Pain: <span id="cramps"></span></div>
+        </div>
+    </section>
+
+    <section id="insights">
+        <h2>Insights</h2>
+        <p>Based on your data, here are some insights about your menstrual cycle...</p>
+        <!-- Display insights and data visualizations -->
+    </section>
+
+
+    <footer>
+        <div>&copy; 2023 Period Tracker. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Retrieve the stored data from localStorage
+        var selectedDay = localStorage.getItem("selectedDay");
+        var periodFlow = localStorage.getItem("periodFlow");
+        var spotting = localStorage.getItem("spotting");
+        var feelings = JSON.parse(localStorage.getItem("feelings"));
+        var pain = JSON.parse(localStorage.getItem("pain"));
+
+        // Update the symptoms container
+        document.getElementById("periodFlow").textContent = periodFlow;
+        document.getElementById("spotting").textContent = spotting ? "Yes" : "No";
+        document.getElementById("sad").textContent = feelings.sad ? "Sad" : "";
+        document.getElementById("happy").textContent = feelings.happy ? "Happy" : "";
+        document.getElementById("moody").textContent = feelings.moody ? "Moody" : "";
+        document.getElementById("bloated").textContent = feelings.bloated ? "Bloated" : "";
+        document.getElementById("cramps").textContent = pain.cramps ? "Cramps" : "";
+
+        // Calculate the next period date and the days left
+        var cycleLength = 28; // Assuming a cycle length of 28 days
+        var currentDate = new Date();
+        var currentDay = currentDate.getDate();
+        var currentMonth = currentDate.getMonth();
+        var currentYear = currentDate.getFullYear();
+
+        var nextPeriodDate;
+        var daysLeft;
+
+        if (currentDay <= parseInt(selectedDay)) {
+            // Next period is in the current month
+            nextPeriodDate = new Date(currentYear, currentMonth, parseInt(selectedDay));
+            daysLeft = parseInt(selectedDay) - currentDay;
+        } else {
+            // Next period is in the next month
+            if (currentMonth === 11) {
+                // Last month of the year, increment the year
+                nextPeriodDate = new Date(currentYear + 1, 0, parseInt(selectedDay));
+            } else {
+                // Increment the month
+                nextPeriodDate = new Date(currentYear, currentMonth + 1, parseInt(selectedDay));
+            }
+            var daysInMonth = new Date(nextPeriodDate.getFullYear(), nextPeriodDate.getMonth() + 1, 0).getDate();
+            daysLeft = daysInMonth - currentDay + parseInt(selectedDay);
+        }
+
+        // Update the summary items
+        document.getElementById("nextPeriodDate").textContent = nextPeriodDate.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById("daysLeft").textContent = daysLeft + " days";
+    </script>
+
+</body>
+
+</html>
