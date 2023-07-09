@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Period Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 10px;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid grey;
+            padding: 8px;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #ff6666;
+            color: white;
+        }
+
+        .period-day {
+            background-color: pink;
+        }
+
+        .graph-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .block {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .option {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        .option:checked {
+            background-color: #ff6666;
+        }
+
+        .track {
+            background-color: #ff6666;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Period Tracker Calendar</h2>
+
+    <table id="calendar">
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+    </table>
+
+    <div class="block">
+        <span class="label">Period Flow:</span>
+        <select id="periodFlow" class="option">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="heavy">Heavy</option>
+        </select>
+    </div>
+
+    <div class="block">
+        <span class="label">Spotting:</span>
+        <input type="checkbox" id="spotting" class="option">
+    </div>
+
+    <div class="block">
+        <span class="label">Feelings:</span>
+        <input type="checkbox" id="sad" class="option">
+        <label for="sad">Sad</label>
+        <input type="checkbox" id="happy" class="option">
+        <label for="happy">Happy</label>
+        <input type="checkbox" id="moody" class="option">
+        <label for="moody">Moody</label>
+        <input type="checkbox" id="bloated" class="option">
+        <label for="bloated">Bloated</label>
+    </div>
+
+    <div class="block">
+        <span class="label">Pain:</span>
+        <input type="checkbox" id="cramps" class="option">
+        <label for="cramps">Cramps</label>
+    </div>
+    <br>
+    <button class="track" onclick="redirectToPage()">Track Period</button>
+
+    <script>
+        var selectedDay = null;
+
+        // Get current date
+        var currentDate = new Date();
+
+        // Get current month and year
+        var currentMonth = currentDate.getMonth();
+        var currentYear = currentDate.getFullYear();
+
+        // Get first day of the month
+        var firstDay = new Date(currentYear, currentMonth, 1);
+
+        // Get number of days in the month
+        var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        // Get day of the week for the first day of the month
+        var dayOfWeek = firstDay.getDay();
+
+        // Create calendar
+        var calendar = document.getElementById("calendar");
+        var row = calendar.insertRow(-1);
+        for (var i = 0; i < dayOfWeek; i++) {
+            row.insertCell(-1);
+        }
+        for (var i = 1; i <= daysInMonth; i++) {
+            if (dayOfWeek % 7 === 0) {
+                row = calendar.insertRow(-1);
+            }
+            var cell = row.insertCell(-1);
+            cell.innerHTML = i;
+            cell.addEventListener('click', function () {
+                this.classList.toggle("period-day");
+                selectedDay = this.innerHTML;
+                updateGraph();
+            });
+            dayOfWeek++;
+        }
+
+        function redirectToPage() {
+            var periodFlow = document.getElementById("periodFlow").value;
+            var spotting = document.getElementById("spotting").checked;
+            var feelings = {
+                sad: document.getElementById("sad").checked,
+                happy: document.getElementById("happy").checked,
+                moody: document.getElementById("moody").checked,
+                bloated: document.getElementById("bloated").checked
+            };
+            var pain = {
+                cramps: document.getElementById("cramps").checked
+            };
+
+            // Store the selected day and button choices in localStorage
+            localStorage.setItem("selectedDay", selectedDay);
+            localStorage.setItem("periodFlow", periodFlow);
+            localStorage.setItem("spotting", spotting);
+            localStorage.setItem("feelings", JSON.stringify(feelings));
+            localStorage.setItem("pain", JSON.stringify(pain));
+
+            // Redirect to the next page
+            window.location.href = "clue.html";
+        }
+    </script>
+
+</body>
+
+</html>

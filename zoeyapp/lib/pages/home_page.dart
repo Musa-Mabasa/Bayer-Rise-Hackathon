@@ -11,10 +11,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF001c30),
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Hi, Zoey!"),
+            Text("Hi, Ellah!"),
           ],
         ),
         actions: [
@@ -55,24 +56,24 @@ class HomePage extends StatelessWidget {
         showSelectedLabels: false,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Ionicons.home_outline),
+            icon: Icon(Ionicons.home_outline, color: Color(0xFF001c30),),
             activeIcon: Icon(Ionicons.home),
             label: "Home",
           ),
           BottomNavigationBarItem(
             icon: Icon(Ionicons.calendar_outline),
             activeIcon: Icon(Ionicons.calendar),
-            label: "Home",
+            label: "Calendar",
           ),
           BottomNavigationBarItem(
             icon: Icon(Ionicons.chatbubble_ellipses_outline),
-            label: "Home",
+            label: "Chat",
             activeIcon: Icon(Ionicons.chatbubble_ellipses),
           ),
           BottomNavigationBarItem(
             icon: Icon(Ionicons.person_outline),
             activeIcon: Icon(Ionicons.person),
-            label: "Home",
+            label: "Person",
           ),
         ],
       ),

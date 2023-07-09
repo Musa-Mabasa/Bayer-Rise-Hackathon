@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:zoeyapp/pages/period.dart';
 
 import '../home.dart';
+import '../info.dart';
 
 class HealthNeeds extends StatelessWidget {
   const HealthNeeds({Key? key}) : super(key: key);
@@ -10,16 +11,16 @@ class HealthNeeds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<CustomIcon> customIcons = [
-      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
+      CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
       CustomIcon(name: "Hospital", icon: 'assets/hospital.png'),
       CustomIcon(name: "Period", icon: 'assets/period.png'),
       CustomIcon(name: "More", icon: 'assets/more.png'),
     ];
     List<CustomIcon> healthNeeds = [
-      CustomIcon(name: "Panic", icon: 'assets/panic.png'),
+      CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
       CustomIcon(name: "Hospital", icon: 'assets/hospital.png'),
       CustomIcon(name: "Period", icon: 'assets/period.png'),
-      CustomIcon(name: "Pharmacy", icon: 'assets/drug.png'),
+      CustomIcon(name: "Learn", icon: 'assets/learn.png'),
     ];
     List<CustomIcon> specialisedCared = [
       CustomIcon(name: "Diabetes", icon: 'assets/blood.png'),
@@ -35,6 +36,14 @@ class HealthNeeds extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
+                if (index == 0) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Home(),
+                    ),
+                  );
+                }
                 if (index == 2) {
                   Navigator.push(
                     context,
@@ -79,7 +88,16 @@ class HealthNeeds extends StatelessWidget {
                                               ),
                                             );
                                           }
-                                          if(index == 3) {
+                                          if (index == 3) {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Info(),
+                                              ),
+                                            );
+                                          }
+                                          if(index == 0) {
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -93,11 +111,8 @@ class HealthNeeds extends StatelessWidget {
                                           width: 60,
                                           height: 60,
                                           padding: const EdgeInsets.all(15),
-                                          decoration: BoxDecoration(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .primaryContainer
-                                                .withOpacity(0.4),
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFF001c30),
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
@@ -134,11 +149,8 @@ class HealthNeeds extends StatelessWidget {
                                           width: 60,
                                           height: 60,
                                           padding: const EdgeInsets.all(15),
-                                          decoration: BoxDecoration(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .primaryContainer
-                                                .withOpacity(0.4),
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFF001c30),
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
@@ -165,11 +177,8 @@ class HealthNeeds extends StatelessWidget {
                 width: 60,
                 height: 60,
                 padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .primaryContainer
-                      .withOpacity(0.4),
+                decoration: const BoxDecoration(
+                  color: Color(0xFF001c30),
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(

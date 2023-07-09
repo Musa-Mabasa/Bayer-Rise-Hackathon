@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zoeyapp/ask.dart';
+import 'package:zoeyapp/pages/dischem.dart';
 import 'health.dart';
 import 'info.dart';
 import 'panic.dart';
@@ -57,12 +58,12 @@ class Pharmacy extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Info()),
+                MaterialPageRoute(builder: (context) => const DisChem()),
               );
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.pink[100],
+                  color: const Color(0xFF001c30),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -106,12 +107,12 @@ class Pharmacy extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Panic()),
+                MaterialPageRoute(builder: (context) => const Info()),
               );
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.pink[100],
+                  color: const Color(0xFF001c30),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -160,7 +161,7 @@ class Pharmacy extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.pink[50],
+                  color: const Color(0xFF001c30).withOpacity(0.4),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -217,7 +218,7 @@ class Pharmacy extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.pink[100],
+                  color: const Color(0xFF001c30),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -266,7 +267,7 @@ class Pharmacy extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.pink[100],
+                  color: const Color(0xFF001c30),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -312,7 +313,7 @@ class Pharmacy extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.pink[100],
+                  color: const Color(0xFF001c30),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -363,7 +364,7 @@ Widget appbarWidget(Size size, BuildContext context, String groupName) {
     padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 6),
     width: size.width,
     height: 100,
-    color: Colors.pink[100],
+    color: Color(0xFFff6666),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -385,7 +386,7 @@ Widget headerWidget(BuildContext context) {
           children: [
             Text(
               'Nearby Pharmacies',
-              style: TextStyle(color: Colors.blue, fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Color(0xFF001c30), fontSize: 30, fontWeight: FontWeight.bold),
             )
           ],
         )

@@ -22,7 +22,7 @@ class _PeriodState extends State<Period> {
               CircularPercentIndicator(
                 center: const Text(
                   "Period in 3 Days",
-                  style: TextStyle(color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold), 
+                  style: TextStyle(color: Color(0xFF001c30), fontSize: 20, fontWeight: FontWeight.bold), 
                 ),
                 animation: true,
                 animationDuration: 2000,
